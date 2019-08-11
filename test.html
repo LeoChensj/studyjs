@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<script type="text/javascript" charset="utf-8" async defer>
+
+	class Person {
+		constructor (name) {
+			this.name = name;
+		}
+
+		showName() {
+			console.log(`我的名字是${this.name}`);
+		}
+	}
+
+	class Student extends Person {
+		constructor (name, skill) {
+			super(name);
+			this.skill = skill;
+		}
+
+		showSkill() {
+			console.log(`我的技能是${this.skill}`)
+		}
+	}
+
+	let p = new Person("Leo");
+	p.showName()
+
+	let s = new Student("Leo A", "basketball");
+	s.showName();
+	s.showSkill();
+
+	console.log(s)
+	console.log(typeof(null))
+
+
+
+
+</script>
+</body>
+</html>
