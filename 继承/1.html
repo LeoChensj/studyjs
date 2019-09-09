@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<script type="text/javascript" charset="utf-8" async defer>
+	
+	Father.prototype.lastName = "Chen"
+	function Father() {
+	}
+
+
+	function Son() {
+	}
+
+	// function inherit(Target, Origin) {
+	// 	function F() {}
+	// 	F.prototype = Origin.prototype
+	// 	Target.prototype = new F()
+	// 	Target.prototype.constructor = Target
+	// 	Target.prototype.my_super = Origin.prototype
+	// }
+
+	let inherit = (function (){
+		var F = function() {}
+		return function(Target, Origin) {
+			F.prototype = Origin.prototype
+			Target.prototype = new F()
+			Target.prototype.constructor = Target
+			Target.prototype.my_super = Origin.prototype
+		}
+	}())
+
+
+
+	inherit(Son, Father)
+	Son.prototype.age = 23
+
+	let father = new Father()
+	let son = new Son()
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<script type="text/javascript" charset="utf-8" async defer>
+
+	var name = "222"//var在全局会加到window的属性上 let不会
+	let a = {
+		name: "111",
+		say: function() {
+			console.log(this.name)
+		}
+	}
+
+	let fun = a.say
+	fun()//222
+	a.say()//111
+
+	let b = {
+		name: "333",
+		say: function(fn) {
+			fn()
+		}
+	}
+
+	b.say(a.say)//222
+	b.say = a.say
+	b.say()//333
+
+
+
+</script>
+</body>
+</html>
